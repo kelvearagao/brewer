@@ -45,5 +45,15 @@ public class CervejasController {
 		
 		return "redirect:/cervejas/novo";
 	}
+	
+	/**
+	 * Mostra página de cadastro de cerveja.
+	 * 
+	 * @return
+	 */
+	@RequestMapping("/cervejas/cadastro")
+	public String cadastro() {
+		return "cerveja/cadastro-produto";
+	}
 
 }
