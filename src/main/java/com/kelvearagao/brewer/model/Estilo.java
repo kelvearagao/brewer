@@ -1,11 +1,13 @@
 package com.kelvearagao.brewer.model;
 
 import java.io.Serializable;
+import java.util.List;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
@@ -19,6 +21,9 @@ public class Estilo implements Serializable {
 	private Long codigo;
 	
 	private String nome;
+	
+	@OneToMany(mappedBy = "estilo")
+	private List<Cerveja> cervejas;
 
 	public Long getCodigo() {
 		return codigo;
