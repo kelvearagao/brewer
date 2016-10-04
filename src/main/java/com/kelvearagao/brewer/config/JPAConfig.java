@@ -13,6 +13,7 @@ import org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean;
 import org.springframework.orm.jpa.vendor.Database;
 import org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter;
 import org.springframework.transaction.PlatformTransactionManager;
+import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 import com.kelvearagao.brewer.model.Cerveja;
 import com.kelvearagao.brewer.repository.Cervejas;
@@ -26,8 +27,8 @@ import com.kelvearagao.brewer.repository.Cervejas;
  * @author kelve
  */
 @Configuration
-@EnableJpaRepositories(basePackageClasses = Cervejas.class)
-//@ComponentScan(basePackageClasses = Cerveja.class)
+@EnableJpaRepositories(basePackageClasses = Cervejas.class, enableDefaultTransactions = false) // desabilita a trasação automática
+@EnableTransactionManagement
 public class JPAConfig {
 	
 	/**

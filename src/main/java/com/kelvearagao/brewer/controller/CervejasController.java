@@ -16,12 +16,13 @@ import com.kelvearagao.brewer.model.Origem;
 import com.kelvearagao.brewer.model.Sabor;
 import com.kelvearagao.brewer.repository.Cervejas;
 import com.kelvearagao.brewer.repository.Estilos;
+import com.kelvearagao.brewer.service.CadastroCervejaService;
 
 @Controller
 public class CervejasController {
 	
 	@Autowired
-	private Cervejas cervejas;
+	private CadastroCervejaService cadastroCervejaService;
 	
 	@Autowired
 	private Estilos estilos;
@@ -52,18 +53,12 @@ public class CervejasController {
 	@RequestMapping(value = "/cervejas/novo", method = RequestMethod.POST)
 	public ModelAndView cadastrar(@Valid Cerveja cerveja, BindingResult result, Model model, RedirectAttributes attributes) {
 		// verifica se tem erros de validação
-		/*
 		if( result.hasErrors() ) {
 			return novo(cerveja);
-		}*/
+		}
 		
+		cadastroCervejaService.salvar(cerveja);
 		attributes.addFlashAttribute("mensagem", "Cerveja salva com sucesso");
-		
-		System.out.println(">>> sku " + cerveja.getSku());
-		System.out.println(">>> sabor " + cerveja.getSabor());
-		System.out.println(">>> origem " + cerveja.getOrigem());
-		
-		System.out.println(">>> estilo " + cerveja.getEstilo());
 		
 		return new ModelAndView("redirect:/cervejas/novo");
 	}
