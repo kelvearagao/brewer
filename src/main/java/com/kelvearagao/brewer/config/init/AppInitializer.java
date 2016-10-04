@@ -5,18 +5,24 @@ import javax.servlet.Filter;
 import org.springframework.web.filter.CharacterEncodingFilter;
 import org.springframework.web.servlet.support.AbstractAnnotationConfigDispatcherServletInitializer;
 
+import com.kelvearagao.brewer.config.JPAConfig;
 import com.kelvearagao.brewer.config.WebConfig;
 
 public class AppInitializer extends AbstractAnnotationConfigDispatcherServletInitializer {
-
+	
+	/**
+	 * Configura antes do getServletConfigClasses.
+	 * O que for dos serviços pra tras, fica aqui!
+	 * 
+	 */
 	@Override
 	protected Class<?>[] getRootConfigClasses() {
-		// TODO Auto-generated method stub
-		return null;
+		return new Class<?>[] { JPAConfig.class };
 	}
 
 	/**
 	 * Retorna a classe de configuração do spring.
+	 * O que for de web fica aqui (dos controllers pra frente)!
 	 * 
 	 */
 	@Override
