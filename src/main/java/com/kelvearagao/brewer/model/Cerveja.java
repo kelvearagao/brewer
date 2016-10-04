@@ -77,6 +77,70 @@ public class Cerveja {
 		this.descricao = descricao;
 	}
 
+	public Long getCodigo() {
+		return codigo;
+	}
+
+	public void setCodigo(Long codigo) {
+		this.codigo = codigo;
+	}
+
+	public BigDecimal getValor() {
+		return valor;
+	}
+
+	public void setValor(BigDecimal valor) {
+		this.valor = valor;
+	}
+
+	public BigDecimal getTeorAlcoolico() {
+		return teorAlcoolico;
+	}
+
+	public void setTeorAlcoolico(BigDecimal teorAlcoolico) {
+		this.teorAlcoolico = teorAlcoolico;
+	}
+
+	public BigDecimal getComissao() {
+		return comissao;
+	}
+
+	public void setComissao(BigDecimal comissao) {
+		this.comissao = comissao;
+	}
+
+	public Integer getQuantidadeEstoque() {
+		return quantidadeEstoque;
+	}
+
+	public void setQuantidadeEstoque(Integer quantidadeEstoque) {
+		this.quantidadeEstoque = quantidadeEstoque;
+	}
+
+	public Origem getOrigem() {
+		return origem;
+	}
+
+	public void setOrigem(Origem origem) {
+		this.origem = origem;
+	}
+
+	public Sabor getSabor() {
+		return sabor;
+	}
+
+	public void setSabor(Sabor sabor) {
+		this.sabor = sabor;
+	}
+
+	public Estilo getEstilo() {
+		return estilo;
+	}
+
+	public void setEstilo(Estilo estilo) {
+		this.estilo = estilo;
+	}
+
 	@Override
 	public int hashCode() {
 		final int prime = 31;
